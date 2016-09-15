@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="175024948570-2178obur22jok2sk1jn3ivo9jpl4tfba.apps.googleusercontent.com">
+</head>
+<body>
+<center>
+<h1>Lab 3</h1>
+<h2>Sign-In Below Using Google</h2>
+<p><input type="Submit" value="Go to the weather page" onclick="location.href='Showtheweather.html'"></p>
+</center>
+<table style="width:100%">
+    <tr>
+        <td width="50%" style="vertical-align:center">
+            <div id="left"></div>
+        </td>
+        <td width="0%" style="vertical-align:center">
+            </br>
+            <div class="g-signin2" data-onsuccess="onSuccess">
+            </div>
+        </td>
+        <td width="50%" style="vertical-align:center">
+            <div id="right">
+                <a href="#" onclick="signOut();">signOut</a>
+            </div>
+        </td>
+    </tr>
+</table>
+<script>
+    function signOut(){
+        var auth2=gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function (){
+            console.log('User signed out.');
+        });
+    }
+</script>
+</body>
+</html>
